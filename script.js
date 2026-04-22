@@ -1,22 +1,21 @@
-/* ─── PROGRESS BAR ───────────────────────────────────────────── */
+/* PROGRESS BAR */
 const bar = document.getElementById('progress');
 window.addEventListener('scroll', () => {
   const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
   bar.style.width = pct + '%';
 });
 
-/* ─── NAVBAR SCROLL ──────────────────────────────────────────── */
+/*NAVBAR SCROLL*/
 const nav = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-/* ─── MOBILE NAV ─────────────────────────────────────────────── */
+/*MOBILE NAV */
 function toggleMobileNav() {
   document.getElementById('mobileNav').classList.toggle('open');
 }
-
-/* ─── REVEAL ON SCROLL ───────────────────────────────────────── */
+/*REVEAL ON SCROLL*/
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -29,7 +28,7 @@ const revealObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 document.querySelectorAll('.project-card').forEach(el => revealObserver.observe(el));
 
-/* ─── COUNT-UP ANIMATION ─────────────────────────────────────── */
+/*COUNT-UP ANIMATION*/
 function countUp(el, target, duration = 1400) {
   let start = null;
   const step = timestamp => {
@@ -58,7 +57,7 @@ const statsObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.hero-card').forEach(el => statsObserver.observe(el));
 
-/* ─── SMOOTH ANCHOR SCROLL ───────────────────────────────────── */
+/*SMOOTH ANCHOR SCROLL*/
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
